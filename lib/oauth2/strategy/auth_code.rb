@@ -31,6 +31,12 @@ module OAuth2
           params[key.to_s] = params.delete(key) if key.is_a?(Symbol)
         end
 
+        puts "AuthCode client fetching the token.."
+        puts "PARAMS: #{params}"
+        puts "-"*30
+        puts "OPTS: #{opts}"
+        puts "-"*30
+
         @client.get_token(params, opts)
       end
 
